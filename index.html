@@ -39,6 +39,36 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+
+  <style>
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      padding-top: 40px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.9);
+    }
+
+    .lightbox-content {
+      margin: auto;
+      display: block;
+      max-width: 95%;
+      max-height: 90%;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: white;
+      font-size: 40px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
 
@@ -475,7 +505,7 @@
           <figure>
             <img src="./data/website-multi-human-qualitative.jpeg" 
                  style="width: 90%; max-width: 2000px; padding-bottom:20px;"
-                 class="img-responsive" 
+                 onclick="openLightbox(this.src)"
                  alt="multi human multi object results">
           </figure>
         </div>
@@ -486,7 +516,7 @@
           <figure>
             <img src="./data/website-single-human-qualitatives.jpeg" 
                  style="width: 90%; max-width: 1200px; padding-bottom:20px;"
-                 class="img-responsive" 
+                 onclick="openLightbox(this.src)"
                  alt="single human multi object results">
           </figure>
         </div>
@@ -580,5 +610,19 @@
   </div>
 </footer>
 
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-content" id="lightbox-img">
+</div>
+<script>
+function openLightbox(src) {
+  document.getElementById("lightbox").style.display = "block";
+  document.getElementById("lightbox-img").src = src;
+}
+
+function closeLightbox() {
+  document.getElementById("lightbox").style.display = "none";
+}
+</script>
 </body>
 </html>
