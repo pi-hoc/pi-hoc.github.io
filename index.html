@@ -68,6 +68,12 @@
       font-size: 40px;
       cursor: pointer;
     }
+
+    .carousel-video {
+      width: 100%;
+      height: auto;
+      border-radius: 12px; /* optional: nicer look */
+    }
   </style>
 </head>
 <body>
@@ -523,25 +529,25 @@
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+          <video autoplay controls muted loop playsinline class="carousel-video">
             <source src="./videos/person_surfboard_refinement.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+          <video autoplay controls muted loop playsinline class="carousel-video">
             <source src="./videos/person_suitcase_handbag_sam3d_refinement.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+          <video autoplay controls muted loop playsinline class="carousel-video">
             <source src="./videos/person_baseballbat_sam3d_refinement.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+          <video autoplay controls muted loop playsinline class="carousel-video">
             <source src="./videos/person_table_monitor_sam3d_refinement.mp4"
                     type="video/mp4">
           </video>
