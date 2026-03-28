@@ -52,7 +52,7 @@
   </div>
   <div class="navbar-menu">
     <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://keunhong.com">
+      <a class="navbar-item" href="https://sravanchittupalli.github.io">
       <span class="icon">
           <i class="fas fa-home"></i>
       </span>
@@ -106,7 +106,7 @@
 
           <div class="column has-text-centered">
             <div class="publication-links">
-              <!-- PDF Link. -->
+              <!-- PDF Link.
               <span class="link-block">
                 <a href="https://arxiv.org/pdf/"
                    class="external-link button is-normal is-rounded is-dark">
@@ -115,7 +115,7 @@
                   </span>
                   <span>Paper</span>
                 </a>
-              </span>
+              </span> -->
               <span class="link-block">
                 <a href="https://arxiv.org/abs/"
                    class="external-link button is-normal is-rounded is-dark">
@@ -163,24 +163,121 @@
   </div>
 </section>
 
-<section class="hero teaser">
+<!-- <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
-                type="video/mp4">
-      </video>
+      <figure>
+        <img src="./data/teaser_v6-1.png" style="padding-bottom:10px" class="img-responsive" alt="overview">
+        <figcaption class="figure-caption text-center" style="font-size: 14px;">
+            <b>Fig. 5.</b> The ReferIt3DNet neural listener.
+        </figcaption>
+      </figure>
+      <br>
       <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
+        <span class="dnerf">ODIN</span> is a single model for 2D and 3D perception.
       </h2>
+    </div>
+  </div>
+</section> -->
+
+<!-- Abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 id="abstract" class="title is-3">Abstract
+            <a href="#abstract" class="anchor-link">
+              <i class="fas fa-link"></i>
+            </a>
+          </h2>
+          <div class="content has-text-justified">
+            <p>
+              Understanding real-world human--object interactions in images is an inherently many-to-many problem, where disentangling fine-grained and concurrent physical contacts is particularly challenging. Existing semantic contact estimation methods are either limited to single-human settings or require object geometry (e.g., meshes) in addition to the input image. Current state-of-the-art method leverages a powerful VLM for category-level semantics, but it still struggle in multi-human scenes and scales poorly at inference time.
+
+              We introduce \textbf{Pi-HOC, a single-pass, instance-aware framework for dense 3D semantic contact prediction across all human--object pairs}. Given an input image, Pi-HOC detects human and object instances, enumerates all human--object pairs, and represents each pair with a dedicated human--object (HO) token. An InteractionFormer jointly refines HO tokens and image patch features to produce interaction-aware pair representations. A SAM-based contact decoder then predicts dense contact on SMPL human meshes for each pair. On the MMHOI and DAMON datasets, Pi-HOC significantly improves accuracy and localization over state-of-the-art methods while achieving $20\times$ higher throughput. These results establish Pi-HOC as an efficient and scalable solution for dense semantic contact reasoning in complex scenes.
+
+              We further show that the predicted contacts improve SAM-3D image-to-mesh reconstruction through a test-time optimization procedure and enable referential contact prediction from language queries without additional training.
+
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- Paper video. -->
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Paper video. -->
+  <!-- </div> -->
+<!-- </section> -->
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3"> Pi-HOC Architecture</h2>
+        
+        <div class="col-md-8 col-md-offset-2">
+                <figure>
+                    <img src="./data/architecture-overview-horizontal.png" style="padding-bottom:10px;" class="img-responsive" alt="overview">
+                    <!-- <figcaption class="figure-caption text-center" style="font-size: 14px;">
+                        <b>Fig. 5.</b> The ReferIt3DNet neural listener.
+                    </figcaption> -->
+                </figure>
+        </div>
+        
+        <div class="content has-text-justified">
+          <p>
+
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3"> Quantitative Results </h2>
+       
+        <div class="content has-text-justified">
+          <p>
+            Pi-HOC achieves state-of-the-art performance on Semantic Contact estimation. We test the method on MMHOI and DAMON datasets.
+          </p>
+        </div>
 
-<section class="hero is-light is-small">
+        <div class="col-md-8 col-md-offset-2">
+                <figure>
+                    <img src="./data/bar-graph-qualitative-results.jpeg" style="padding-bottom:10px" class="img-responsive" alt="overview">
+                    <!-- <figcaption class="figure-caption text-center" style="font-size: 14px;">
+                        <b>Fig. 5.</b> The ReferIt3DNet neural listener.
+                    </figcaption> -->
+                </figure>
+    </div>
+    <div class="content has-text-justified">
+      <p>
+        Pi-HOC consistently outperforms InteractVLM across benchmarks, achieving ~17% higher precision on MMHOI and notable gains on DAMON, while maintaining significantly higher inference speed. Unlike InteractVLM, Pi-HOC scales efficiently with increasing human–object pairs, demonstrating a superior balance between accuracy and computational efficiency.
+      </p>
+    </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="hero is-light is-small">
   <div class="hero-body">
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
@@ -235,69 +332,15 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
-          </p>
-          <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
-          </p>
-          <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Abstract. -->
 
-    <!-- Paper video. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-    <!--/ Paper video. -->
-  </div>
-</section>
-
-
-<section class="section">
+<!-- <section class="section">
   <div class="container is-max-desktop">
 
     <div class="columns is-centered">
 
-      <!-- Visual Effects. -->
       <div class="column">
         <div class="content">
           <h2 class="title is-3">Visual Effects</h2>
@@ -311,9 +354,7 @@
           </video>
         </div>
       </div>
-      <!--/ Visual Effects. -->
 
-      <!-- Matting. -->
       <div class="column">
         <h2 class="title is-3">Matting</h2>
         <div class="columns is-centered">
@@ -331,14 +372,11 @@
         </div>
       </div>
     </div>
-    <!--/ Matting. -->
 
-    <!-- Animation. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Animation</h2>
 
-        <!-- Interpolating. -->
         <h3 class="title is-4">Interpolating states</h3>
         <div class="content has-text-justified">
           <p>
@@ -370,9 +408,7 @@
           </div>
         </div>
         <br/>
-        <!--/ Interpolating. -->
 
-        <!-- Re-rendering. -->
         <h3 class="title is-4">Re-rendering the input video</h3>
         <div class="content has-text-justified">
           <p>
@@ -391,14 +427,11 @@
                     type="video/mp4">
           </video>
         </div>
-        <!--/ Re-rendering. -->
 
       </div>
     </div>
-    <!--/ Animation. -->
 
 
-    <!-- Concurrent Work. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Related Links</h2>
@@ -423,8 +456,91 @@
         </div>
       </div>
     </div>
-    <!--/ Concurrent Work. -->
 
+  </div>
+</section> -->
+
+<section class="section">
+  <div class="container is-max-widescreen">
+    
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        
+        <!-- Main Heading -->
+        <h2 class="title is-3">Qualitative Results</h2>
+
+        <!-- Subheading A -->
+        <h3 class="title is-4">a) Multi Human Multi Object Scenarios</h3>
+        <div class="col-md-8 col-md-offset-2">
+          <figure>
+            <img src="./data/website-multi-human-qualitative.jpeg" 
+                 style="padding-bottom:20px" 
+                 class="img-responsive" 
+                 alt="multi human multi object results">
+          </figure>
+        </div>
+
+        <!-- Subheading B -->
+        <h3 class="title is-4">b) Single Human Multi Object Scenarios</h3>
+        <div class="col-md-8 col-md-offset-2">
+          <figure>
+            <img src="./data/qual_single_human_multi_object.png" 
+                 style="padding-bottom:10px" 
+                 class="img-responsive" 
+                 alt="single human multi object results">
+          </figure>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <h2 class="title is-4"> <center>ODIN Perception with an Embodied Agent</center>  </h2>
+  
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./videos/1.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./videos/2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+            <source src="./videos/3.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+            <source src="./videos/4.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blueshirt">
+          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+            <source src="./videos/5.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-mask">
+          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
+            <source src="./videos/6.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -432,11 +548,13 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+    <pre><code>@misc{jain2024odin,
+      title={ODIN: A Single Model for 2D and 3D Perception}, 
+      author={Ayush Jain and Pushkal Katara and Nikolaos Gkanatsios and Adam W. Harley and Gabriel Sarch and Kriti Aggarwal and Vishrav Chaudhary and Katerina Fragkiadaki},
+      year={2024},
+      eprint={2401.02416},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
 }</code></pre>
   </div>
 </section>
@@ -444,15 +562,6 @@
 
 <footer class="footer">
   <div class="container">
-    <div class="content has-text-centered">
-      <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
-        <i class="fas fa-file-pdf"></i>
-      </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
@@ -462,11 +571,8 @@
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
           <p>
-            This means you are free to borrow the <a
-              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
-            we just ask that you link back to this page in the footer.
-            Please remember to remove the analytics code included in the header of the website which
-            you do not want on your website.
+            Source code of this website is borrowed from <a
+              href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
           </p>
         </div>
       </div>
