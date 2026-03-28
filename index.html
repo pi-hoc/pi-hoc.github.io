@@ -533,25 +533,25 @@
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item item-steve">
-          <video autoplay controls muted loop playsinline class="carousel-video">
+          <video class="carousel-video" controls muted loop playsinline preload="metadata">
             <source src="./videos/person_surfboard_refinement.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-chair-tp">
-          <video autoplay controls muted loop playsinline class="carousel-video">
+          <video class="carousel-video" controls muted loop playsinline preload="metadata">
             <source src="./videos/person_suitcase_handbag_sam3d_refinement.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-shiba">
-          <video autoplay controls muted loop playsinline class="carousel-video">
+          <video class="carousel-video" controls muted loop playsinline preload="metadata">
             <source src="./videos/person_baseballbat_sam3d_refinement.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-fullbody">
-          <video autoplay controls muted loop playsinline class="carousel-video">
+          <video class="carousel-video" controls muted loop playsinline preload="metadata">
             <source src="./videos/person_table_monitor_sam3d_refinement.mp4"
                     type="video/mp4">
           </video>
@@ -611,5 +611,41 @@ function closeLightbox() {
   document.getElementById("lightbox").style.display = "none";
 }
 </script>
+
+<script>
+  const videos = document.querySelectorAll('.carousel-video');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const video = entry.target;
+
+      if (entry.isIntersecting) {
+        video.play().catch(() => {});
+      } else {
+        video.pause();
+      }
+    });
+  }, {
+    threshold: 0.6
+  });
+
+  videos.forEach(video => {
+    observer.observe(video);
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const carousel = document.querySelector('#results-carousel');
+
+    carousel.addEventListener('slide:changed', () => {
+      document.querySelectorAll('.carousel-video').forEach(v => v.pause());
+
+      const active = carousel.querySelector('.is-active video');
+      if (active) active.play().catch(() => {});
+    });
+  });
+</script>
+
 </body>
 </html>
