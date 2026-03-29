@@ -80,7 +80,7 @@
     }
 
     .video-wrapper {
-      max-width: 600px;
+      max-width: 700px;
       margin: 0 auto; /* centers it */
     }
 
@@ -251,7 +251,7 @@
             <p>
               Understanding real-world human--object interactions in images is an inherently many-to-many problem, where disentangling fine-grained and concurrent physical contacts is particularly challenging. Existing semantic contact estimation methods are either limited to single-human settings or require object geometry (e.g., meshes) in addition to the input image. Current state-of-the-art method leverages a powerful VLM for category-level semantics, but it still struggle in multi-human scenes and scales poorly at inference time.
 
-              We introduce Pi-HOC, a single-pass, instance-aware framework for dense 3D semantic contact prediction across all human--object pairs. Given an input image, Pi-HOC detects human and object instances, enumerates all human--object pairs, and represents each pair with a dedicated human--object (HO) token. An InteractionFormer jointly refines HO tokens and image patch features to produce interaction-aware pair representations. A SAM-based contact decoder then predicts dense contact on SMPL human meshes for each pair. On the MMHOI and DAMON datasets, Pi-HOC significantly improves accuracy and localization over state-of-the-art methods while achieving 20x higher throughput. These results establish Pi-HOC as an efficient and scalable solution for dense semantic contact reasoning in complex scenes.
+              We introduce <b>Pi-HOC, a single-pass, instance-aware framework for dense 3D semantic contact prediction across all human--object pairs</b>. Given an input image, Pi-HOC detects human and object instances, enumerates all human--object pairs, and represents each pair with a dedicated human--object (HO) token. An InteractionFormer jointly refines HO tokens and image patch features to produce interaction-aware pair representations. A SAM-based contact decoder then predicts dense contact on SMPL human meshes for each pair. On the MMHOI and DAMON datasets, Pi-HOC significantly improves accuracy and localization over state-of-the-art methods while achieving 20x higher throughput. These results establish Pi-HOC as an efficient and scalable solution for dense semantic contact reasoning in complex scenes.
 
               We further show that the predicted contacts improve SAM-3D image-to-mesh reconstruction through a test-time optimization procedure and enable referential contact prediction from language queries without additional training.
 
